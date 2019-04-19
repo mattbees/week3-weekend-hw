@@ -11,7 +11,8 @@ class Beers {
     PubSub.publish('Beers:food-list-ready', this.foodData);
     this.getBeers();
     PubSub.subscribe('SelectView:food-selected', (event) => {
-      // call next function
+    const selectBeers = this.searchBeers(event.detail);
+    PubSub.publish('Beers:beer-list-ready', selectBeers);
     });
 
   };
@@ -23,17 +24,18 @@ class Beers {
     requestHelper.get()
     .then(data => {
       this.beerData = data;
-      console.log(this.beerData[0]);
     })
     .catch(message => {
       console.error(message);
     });
-
   };
 
-  returnSelectedData(index) {
-    // take selected object from array and publish it
-
+  searchBeers(foodType) {
+    // filters beerData[] and returns array of recommended beers
+    return this.beerData.filter((beer => {
+      const foods = beer.food_pairing.toString();
+      return foods.includes(foodType);
+    }));
   };
 
 };

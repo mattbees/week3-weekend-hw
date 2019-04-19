@@ -14,16 +14,16 @@ class SelectView {
 
     this.element.addEventListener('change', (event) => {
       console.dir(event);
-      const selectID = event.target.value;
-      PubSub.publish('SelectView:food-selected', selectID);
+      const food = event.target.value;
+      PubSub.publish('SelectView:food-selected', food);
     });
   };
 
   populateFoods(foods) {
-    foods.forEach((food, index) => {
+    foods.forEach((food) => {
       const option = document.createElement('option');
       option.textContent = food;
-      option.value = index;
+      option.value = food;
       this.element.appendChild(option);
     });
   };
