@@ -31,7 +31,7 @@ class Beers {
   };
 
   searchBeers(foodType) {
-    // filters beerData[] and returns array of recommended beers
+    // filters this.beerData[] and returns recommended beers
     return this.beerData.filter((beer => {
       const foods = beer.food_pairing.toString();
       return foods.includes(foodType);

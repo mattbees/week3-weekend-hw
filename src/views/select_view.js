@@ -8,12 +8,10 @@ class SelectView {
 
   bindEvents() {
     PubSub.subscribe('Beers:food-list-ready', (event) => {
-    console.log('Beers:food-list-ready WORKING');
     this.populateFoods(event.detail);
     });
 
     this.element.addEventListener('change', (event) => {
-      console.dir(event);
       const food = event.target.value;
       PubSub.publish('SelectView:food-selected', food);
     });
