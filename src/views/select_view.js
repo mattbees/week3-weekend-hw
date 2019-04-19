@@ -9,7 +9,7 @@ class SelectView {
   bindEvents() {
     PubSub.subscribe('Beers:food-list-ready', (event) => {
     console.log('Beers:food-list-ready WORKING');
-//    populateFoods(event.detail);
+    this.populateFoods(event.detail);
     });
   };
 
