@@ -6,7 +6,7 @@ class RequestHelper {
 
   get() {
     return fetch(this.url)
-      .then(res => return res.json())
+      .then(res => res.json())
   }
 
 }
