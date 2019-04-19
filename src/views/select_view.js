@@ -11,6 +11,12 @@ class SelectView {
     console.log('Beers:food-list-ready WORKING');
     this.populateFoods(event.detail);
     });
+
+    this.element.addEventListener('change', (event) => {
+      console.dir(event);
+      const selectID = event.target.value;
+      PubSub.publish('SelectView:food-selected')
+    });
   };
 
   populateFoods(foods) {

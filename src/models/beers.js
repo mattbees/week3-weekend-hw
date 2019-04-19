@@ -8,7 +8,10 @@ class Beers {
   bindEvents() {
     PubSub.publish('Beers:food-list-ready', this.data);
 
-    
+    PubSub.subscribe('SelectView:food-selected', (event) => {
+      console.log('SelectView:food-selected working');
+    });
+
   };
 
 
