@@ -15,18 +15,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
-
-
-
-
-
-
-// const url = 'https://api.punkapi.com/v2/beers';
-// const requestHelper = new RequestHelper(url);
-// requestHelper.get()
-//   .then(data => {
-  //     console.log(data);
-  //   })
-  //   .catch(message => {
-    //     console.error(message);
-    // });

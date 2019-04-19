@@ -15,7 +15,7 @@ class SelectView {
     this.element.addEventListener('change', (event) => {
       console.dir(event);
       const selectID = event.target.value;
-      PubSub.publish('SelectView:food-selected')
+      PubSub.publish('SelectView:food-selected', selectID);
     });
   };
 
