@@ -11,10 +11,13 @@ class Beers {
     PubSub.publish('Beers:food-list-ready', this.foodData);
     this.getBeers();
     PubSub.subscribe('SelectView:food-selected', (event) => {
-    const selectBeers = this.searchBeers(event.detail);
-    PubSub.publish('Beers:beer-list-ready', selectBeers);
+      const selectBeers = this.searchBeers(event.detail);
+      PubSub.publish('Beers:beer-list-ready', selectBeers);
     });
-
+    PubSub.subscribe('ResultView:beer-mouseover', (event) => {
+      const selectedBeer = this.beerDetail(event.detail);
+      PubSub.publish('Beers:beer-object-ready', selectedBeer);
+    });
   };
 
   getBeers() {
@@ -36,6 +39,14 @@ class Beers {
       const foods = beer.food_pairing.toString();
       return foods.includes(foodType);
     }));
+  };
+
+  beerDetail(beerName) {
+    // returns beer object based on name entered as arg
+    const selectedBeer = this.beerData.filter((beer => {
+      return beer.name === beerName;
+    }));
+    return selectedBeer[0];
   };
 
 };

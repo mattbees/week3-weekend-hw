@@ -9,8 +9,9 @@ class ResultView {
 
   bindEvents() {
     PubSub.subscribe('Beers:beer-list-ready', (event) => {
-    this.renderBeers(event.detail);
+      this.renderBeers(event.detail);
     });
+
   };
 
   renderBeers(beers) {
@@ -31,11 +32,13 @@ class ResultView {
     const images = document.querySelectorAll('.flex-item');
     images.forEach((image) => {
       image.addEventListener('mouseover', (event) => {
-        this.showDetail(/*event.srcElement.id*/); // need to pass beer as arg??
+        const imageID = event.srcElement.id;
+        PubSub.publish('ResultView:beer-mouseover', imageID);
       });
       // add mouseout event:
       image.addEventListener('mouseout', (event) => {
-        this.hideDetail();
+        const imageID = event.srcElement.id; // QUESTION: Do i need a payload?
+        PubSub.publish('ResultView:beer-mouseout', imageID);
       });
     });
   };
