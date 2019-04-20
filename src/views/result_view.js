@@ -42,30 +42,6 @@ class ResultView {
     });
   };
 
-  showDetail(/*id as arg*/) {
-    // TODO: Publish ResultView:beer-selected, image ID
-    // TODO: Wait for response with matched beed data and render it
-    this.fillDetail(/*id as arg*/); // GET RELEVANT DATA
-    this.secondElement.style.visibility = 'visible';
-  };
-
-  hideDetail() {
-    this.secondElement.style.visibility = 'hidden';
-  };
-
-  fillDetail(/*id as arg*/) {
-    this.secondElement.textContent = '';
-    const beerName = document.createElement('h3');
-    beerName.textContent = 'BEERNAME';
-    const beerImage = document.createElement('img');
-    // TODO: code beer image
-    const beerDescrip = document.createElement('p');
-    beerDescrip.textContent = 'DESCRIPTION';
-    this.secondElement.appendChild(beerName);
-    // this.secondElement.appendChild(beerImage);
-    this.secondElement.appendChild(beerDescrip);
-  };
-
 };
 
 

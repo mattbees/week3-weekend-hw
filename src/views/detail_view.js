@@ -8,18 +8,15 @@ class DetailView {
 
   bindEvents() {
     PubSub.subscribe('Beers:beer-object-ready', (event) => {
-      this.getFoods(event.detail);
-      console.dir(event.detail);
-      this.fillDetail(event.detail);
-      console.log('Beers:beer-object-ready WORKING');
+      this.showDetail(event.detail);
     });
     PubSub.subscribe('ResultView:beer-mouseout', (event) => {
-      console.log('ResultView:beer-mouseout WORKING');
+      this.hideDetail();
     })
   };
 
-  showDetail(/*id as arg*/) {
-    this.fillDetail(/*id as arg*/); // GET RELEVANT DATA
+  showDetail(beerObject) {
+    this.fillDetail(beerObject);
     this.element.style.visibility = 'visible';
   };
 
