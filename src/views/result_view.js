@@ -37,8 +37,7 @@ class ResultView {
       });
       // add mouseout event:
       image.addEventListener('mouseout', (event) => {
-        const imageID = event.srcElement.id; // QUESTION: Do i need a payload?
-        PubSub.publish('ResultView:beer-mouseout', imageID);
+        PubSub.publish('ResultView:beer-mouseout');
       });
     });
   };
