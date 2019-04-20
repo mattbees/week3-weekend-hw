@@ -1,3 +1,3 @@
-const foodTypes = [ 'fish', 'chicken', 'dessert', 'pot luck' ];
+const foodTypes = [ 'lamb', 'beef', 'chicken', 'fish', 'crab', 'pie' ];
 
 module.exports = foodTypes;

@@ -1,13 +1,22 @@
+body {
+  font-family: 'Helvetica';
+  border-top: 5px solid;
+  margin: 0;
+}
+
 #intro {
   max-width: 60%;
   margin: auto;
   text-align: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid;
 }
 
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .flex-item {
@@ -23,6 +32,6 @@
   height: 600px;
   border: 3px solid black;
   border-radius: 30px;
-  background-color: #ffffff;
+  background-color: #5d80c0;
   visibility: hidden;
 }
