@@ -19,7 +19,7 @@ a {
 }
 
 #food-input {
-  font-size: 1.2em;  
+  font-size: 1.2em;
 }
 
 .flex-container {
@@ -36,16 +36,43 @@ a {
 .fixed-container {
   position: fixed;
   top: 300px;
-  left: 20%;
-  width: 60%;
-  height: 600px;
+  left: 12%;
+  width: 76%;
+  min-height: 600px;
   border: 3px solid black;
   border-radius: 30px;
   background-color: #ffffff;
-  opacity: 0.9;
+  opacity: 0.95;
   visibility: hidden;
   z-index: 99;
+  font-size: 1.4em;
 }
+
+.fixed-container img {
+  float: right;
+  height: 500px;
+  padding: 20px;
+}
+
+.fixed-container h2 {
+  text-align: center;
+  padding-left: 20px;
+}
+
+/* Question: How do I style these as a group?: */
+.fixed-container p, h3, li {
+  padding-left: 20px;
+}
+/*
+.fixed-container h3 {
+  padding-left: 20px;
+}
+.fixed-container li {
+  padding-left: 20px;
+}
+*/
+
+
 
 #footer {
   position: fixed;

@@ -26,28 +26,28 @@ class DetailView {
 
   fillDetail(beerObject) {
     this.element.textContent = '';
-    const name = this.getName(beerObject);
     const image = this.getImage(beerObject);
+    const name = this.getName(beerObject);
     const descrip = this.getDescrip(beerObject);
     const foodsHeading = this.createFoodsHeading();
     const foods = this.getFoods(beerObject);
-    this.element.appendChild(name);
     this.element.appendChild(image);
+    this.element.appendChild(name);
     this.element.appendChild(descrip);
     this.element.appendChild(foodsHeading);
     this.element.appendChild(foods);
-  };
-
-  getName(beerObject) {
-    const beerName = document.createElement('h3');
-    beerName.textContent = beerObject.name;
-    return beerName;
   };
 
   getImage(beerObject) {
     const beerImage = document.createElement('img');
     beerImage.src = beerObject.image_url;
     return beerImage;
+  };
+
+  getName(beerObject) {
+    const beerName = document.createElement('h2');
+    beerName.textContent = beerObject.name;
+    return beerName;
   };
 
   getDescrip(beerObject) {
@@ -67,7 +67,7 @@ class DetailView {
   };
 
   createFoodsHeading() {
-    const foodsHeading = document.createElement('h4');
+    const foodsHeading = document.createElement('h3');
     foodsHeading.textContent = 'Recommended food pairings';
     return foodsHeading;
   };
